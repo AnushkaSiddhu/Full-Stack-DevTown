@@ -1,201 +1,127 @@
-//Now we are going to assign the variable
-// so to declare a variable we use let.In javascript there is no need to declare the type of the variable used
-// Number data type
-let age = 18;
-console.log(age);
+// let brand = "mercedes"
+// //console.log(brand)
+// console.log(brand.toUpperCase())
 
-// // string in Javascript
-let brand = "This is a brand";
-console.log(brand);
-
-//boolean
-let isTrue = "true";
-
-// null is like a void.It contains no ElementInternals. But according to the javascript the num contain the value inside it but it is not visible
-let anything = null;
-console.log(null);
-
-//console.log(food)
-//but if you just define like I done in above then it wil show a reference error. Because the food is not define.
-
-//if you want to know the data type of the variable then use console.log(typeof) such like this
-console.log(typeof 18);
-console.log(typeof 18.6565658);
-console.log(typeof 18.65656518);
-console.log(typeof True);
-console.log(typeof False);
-console.log(typeof null);
-console.log(typeof undefined);
-console.log(typeof "c");
-
-// Assignment operators
-
-/*Modifying the value*/
-let work = 8;
-work = 10;
-console.log(work);
-// if we want to change the value then above is the way to change the value
-
-/*let work=8
-    console.log(work)
-    work=10
-    console.log(work)*/
-// if we have written in the above manner so it will first show the previous value then it will show the value that is changed
-
-/*const work=8;
-    work=10
-    console.log(work)
-    if you don't want to modify the value then use the const*/
-
-//increment the value
-let sweet = 10
-sweet = sweet + 10
-//sweet += 10 you can write like this also
-console.log(sweet)
-
-//decrement the value
-let sweety = 10
-sweety = sweety - 5
-//sweet -= 5
-console.log(sweety)
-
-//multiplication the value
-let y=10
-y *=3
-console.log(y)
-
-//if you want to increase value just by 1 
-let a=5
-a++
-console.log(a)
-
-//predict the output of following
-let thing=10
-console.log(thing++)
-// the ++ after the thing is a post increment operator that increases the value after log so the output is 10 only
-
-let nick=10
-console.log(++nick)
-// the ++ before nick is a pre increment that increases the value before the log so the output i s11
-
-// Comparison Operator
-
-let c=10
-let d=15
-console.log(c < d)
-console.log(c > d)
-console.log(c <= d)
-console.log(c >= d)
-
-let e=10
-let f='10'
-console.log(e<f)
-console.log(e>f)
-console.log(e==f)
-// the output of the above is true because the == double equal sign compares the value only value . It don't bother about the data type and all it just compares the values 
-console.log(e===f)
-// the === triple equal sign compares the values as well the type of data so its gonna be true only and only when the type and values are same else it will print false
-
-let g =10
-let h=5
-console.log(g+h)
-console.log(g-h)
-console.log(g*h)
-console.log(g/h)
-console.log(g**h)
-console.log(g%h) //% give the remainder
-
-// type casting happening in the background
-let i=5
-let j='5'
-console.log(i+j)
-console.log(Number(j)+i)//in this way we can convert a string to a number and then add it
-
-//logical operators
-
-// there are two types of logic and and or logic
-
-console.log('true && true',true && true)
-console.log('true && false',true && false)
-console.log('false && true',false && true)
-console.log('false && false',false && false)
-
-console.log('true || true',true || true)
-console.log('true || false',true || false)
-console.log('false || true',false || true)
-console.log('false || false',false || false)
-
-//functions 
-
-// function greet() {
-//     console.log('HI')
+//JSON-Javascript object notation
+// const temp={
+//     //left are keys and right are values in objects.
+//     age: 18,
+//     brand: "Mercedes",
+//     greet: () => {console.log('hi')}//here we have declare a function inside the an object.
 // }
-// greet()
+// console.log(temp.age)
+// console.log(temp.brand)
+// console.log(temp['brand'])//you can write like this also instead of the above one .
+// temp.greet()
 
-function greet(Name) {
-    console.log('HI' + Name)
+const temp = {
+    age:18,
+    brand: "Mercedes",
+    greet: () => {console.log('hi')},
+    //getBrand: () =>{ console.log(brand)},//here it is showing an error that brand is not defined it is a wrong way of writing this
+    getBrand: () =>{ console.log(temp.brand)}//this is the correct way of writing temp.brand
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+temp.getBrand()
+
+console.log(this)//it will show the path of the parent for this the parent is the window .
+console.log(window)//for this too parent is window
+
+const car = {
+    experience: 4,
+    company: "google",
+    // getBranch: () =>{ console.log(this)}
+    getBranch:  function () { console.log(this) }//instead of using=> write function then it will or else it will show an error
+    // getBranch:  function () { console.log(this.company) }//uncomment and run this command 
+    // you can access objects by this
+    // this.experience 
+    // this.company
 }
-greet()
-// if you write tha above code then you can see that it won't throw an error it will show undefined. But why it is so because we haven;t define the Name then also no error . This is because it is itself defined it in the function and since we haven't given any value to it so it is showing undefined. It is pre defined in the function. It is a local scope variable.
+car.getBranch()
 
-function geet(Name="defaultname"){
-    console.log(Name)
+//lets talk about arrays now.
+let arr = [ 1,2,3,45,"strings","b",{age: 10} ]
+console.log(arr)//array is an object only
+console.log(typeof arr)
+console.log(arr.length)
+console.log(arr[0])
+console.log(arr[6])
+
+/*
+subarrays can also be created in arrays
+ let array = [ 1,2,3,45,"strings","b",[1,2,4] ]*/
+
+let ar = [ 1,2,3,4,5]
+
+//iterate over an array. using for loop in javascript.
+for(let i=0;i<ar.length;i++)
+{
+    console.log(ar[i])
 }
-geet()
-
-function geet(Name="defaultname"){
-    console.log(Name)
+let j=0
+while (j<ar.length) 
+{
+    console.log(ar[j])
+    j++
 }
-geet("Anushka")
 
-/*function geet(Name="defaultname"){
-    
+//array methods in javascript
+
+let array= [1,2,3,4]
+let iter= 0
+const callback = function ()
+{
+iter++
+console.log('You called me',iter)
 }
-console.log(Name)//if we write the console here then it will throw the error. The console should be inside the body only . else it will throe an error .
 
-geet("Anushka")*/
+array.forEach(callback)
 
-//function to add two values and return it
-
-function add(A = 0,B = 0){
-    const C =A+B
-    return C
+// there is no need to used for and while like in other language we use . In javascript we have for each and call back methods to use the lopping methods
+let Array= [1,2,3,4,"hi","John","Daffy"]
+const Callback = function (element,iteration)//(e,i) or just write this  
+{
+    console.log(element,iteration)
 }
- const sum=add(10,15)
- console.log(sum)
+arr.forEach(Callback)
 
-//hoisting in javascript
-// greek1()
-// greek2()
-// function greek1()//this is a way to declare the function
-// {
-//     console.log("Good Morning")
-// }
+//  elements tells the value on that specific index 
+//  and the iteration tells the index at that value
 
-// let greek2=function(){//another way to declare the function
-//     console.log("Guten Tag")
-// }
+// or need to write line 80-86 just write all these things in a single line
+// arr.forEach((e,i) => console.log(e,i))
 
-/*so as you can see that its printing Good Morning but not printing Gunten Tag the reason is that function greek1() it is a pure function but function greek1() is not a pure way of writing the function 
-so whenever we write function like this function greek1() so it takes function greek1() above the greek1() so it print Good Morning.
-but it is not with greek2=function() it don't come above the greek2() hence it is throwing the error*/
+//adding an element in an array
+let arayy= [1,2,3]
+console.log(arayy.push)//it returns the no. which is being pushed
+console.log(arayy)
+//push adds element in the ending of an array
 
+let aro= [1,2,3]
+console.log(aro.unshift())//it returns the no. which is being unshift
+console.log(aro)
+//unshift adds the element in the starting of the array
 
-let greek3=()=>{//greek2=function remove this func and write =>
-    console.log("suraj")
+let Arayy = [1,2,3]
+console.log(Arayy.shift())
+console.log(Arayy)
+//shift removes the elements from the starting of the array
+
+let Arayo = [1,2,3]
+console.log(Arayo.pop())
+console.log(Arayo)
+//pop removes the element from the ending of the array.
+
+//slicing of the array
+let Arrr=[1,2,3,4,5,6]
+console.log(Arrr.slice(0,4))
+//in slicing (0,4) the element from index 0 to 3 is removed but the last (0,4) 4th index element is not removed. if (0,2) is written then elements at index 0,1 is only removed
+
+//returning the map for returning the value
+let array1=[1,2,3,4,5,6]
+const calback = (ele,i) =>{
+    return ele*10
 }
-greek3()
-// there is a another way of writing function that just remove the function and add => after  the curly brackets
-
-let great1= function(nut){
-    return "HI " +nut;
-}
-let great2=(nut)=> "HI " + nut
-
-
-
- console.log(great1("Mummy"))
- console.log(great2("Papa"))
-
- 
+const new_array= array1.map(calback)//returns the value of calback
+console.log(new_array)
+console.log(array1)
 
